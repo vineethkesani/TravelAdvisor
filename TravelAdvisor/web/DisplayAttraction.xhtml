@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Attraction</title>
+    </h:head>
+    <h:body style="background-color: gray; color: black" >
+        <h:form>
+            <h:dataTable id="dispattraction"  
+                         value="#{login.theLoginAccount.showAttraction()}" var="att" > 
+
+                <h:column>  
+                    <h2> <h:outputText styleClass="dataTableOutputText" 
+                                       id="attname" value="#{att.att_name}"/> </h2>
+                 
+                    <h:commandButton id="Review" value="Review" immediate="true"
+                                     action="#{login.clickReview(att.att_name)}" />
+                    <br></br>
+                    <br></br>
+                    
+                    <h:commandButton id="Addtofav" value="Add to Favorite" immediate="true"
+                                     action="#{login.clickFav(att.att_name)}" />
+                    <br></br>
+                    <br></br>
+                
+                    <h:commandButton id="return" value="Return" immediate="true"
+                                     action="welcome.xhtml" />
+                    <br></br>
+                    <br></br>
+                 <b>State: </b>
+                 <h:outputText styleClass="dataTableOutputText" 
+                               id="attstate" value="#{att.att_city}"/>
+                 <br></br>
+                 <br></br>
+                 <b>City: </b>
+                 <h:outputText styleClass="dataTableOutputText" 
+                               id="attcity" value="#{att.att_city}"/>
+                 <br></br>
+                 <br></br>
+                 <b>Overview: </b>
+                 <h:outputText styleClass="dataTableOutputText" 
+                               id="attdesc" value="#{att.att_desc}"/>
+                 <br></br>
+                 <br></br>
+                 <b>Average Score: </b>
+                 <h:outputText styleClass="dataTableOutputText" 
+                               id="attscore" value="#{att.score}"/>
+                </h:column>
+                
+            </h:dataTable>  
+            
+            <br></br>
+            <h3>Below are the reviews for this attraction: </h3>
+            
+            <h:dataTable id="dispreview" 
+                         rows ="#{login.theLoginAccount.showReviews().size()}" 
+                 value="#{login.theLoginAccount.showReviews()}" var="review">  
+                <h:column>  
+                <b>Reviewed by: </b>    
+                <h:outputText styleClass="dataTableOutputText" 
+                              id="review_user" value="#{review.user}"/>
+                <br></br>
+                <b>Reviewer Score: </b>
+                <h:outputText styleClass="dataTableOutputText" 
+                              id="review_score" value="#{review.score}"/>
+                <br></br>
+                <b>Reviewed Comments: </b>
+                <h:outputText styleClass="dataTableOutputText" 
+                              id="review_comments" value="#{review.comments}"/>
+                <br></br>
+                <b>Date and Time:</b>
+                <h:outputText styleClass="dataTableOutputText" 
+                              id="review_dandt" value="#{review.dateandtime}"/>
+                <br></br>
+                <P>********************************************************************</P>
+                </h:column>  
+ 
+            </h:dataTable>
+            <h:commandButton id="return" value="Return" immediate="true"
+                                     action="welcome.xhtml" />
+        </h:form>
+    </h:body>
+</html>
+

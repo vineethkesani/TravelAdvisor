@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Add Review</title>
+    </h:head>
+    <h:body style="background-image: url(Images/Create_Attraction.jpg); background-repeat: no-repeat;  text-align:center; background-size:cover;">
+        <h:form>
+            <h3>Please answer below questions:</h3>
+           
+            <p>Please enter your Score(1-5):<br></br>
+                <h:inputText id="Attraction_name" required ="true" 
+                             requiredMessage="The name field cannot be empty"
+                        title="Please enter Attraction Name" 
+                        value="#{login.review_score}">
+                         
+                </h:inputText>
+            </p>
+            
+            <p>Please enter your comments:<br></br>
+                <h:inputText id="Attraction_Desc" required ="true" 
+                             requiredMessage="The Description field cannot be empty"
+                        title="Please enter description Attraction"
+                        value="#{login.review_comments}">
+                         
+                </h:inputText>
+            </p>
+            
+            <p>
+                <h:commandButton id="submit" value="Submit"
+                                 action="ReviewPosted.xhtml" />
+            </p>
+            
+        </h:form>
+    </h:body>
+</html>
+

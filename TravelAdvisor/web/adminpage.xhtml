@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Admin</title>
+    </h:head>
+   
+      
+    <h:body style="background-image: url(Images/Create_Attraction.jpg); background-repeat: no-repeat;  text-align:center; background-size:cover;">
+        <div><h2>Welcome to Admin page</h2></div>       
+        <br></br>
+        <br></br>
+        
+        <h3>Please select one of the below:</h3>
+            <p><h:link outcome="displayUsers.xhtml" >
+                    To view all Users
+                </h:link> </p>
+        
+            <p><h:link outcome="displayApprovedAttractions.xhtml" >
+                    To view all Approved Attractions
+                </h:link> </p> 
+                
+            <p><h:link outcome="displayPendingAttractions.xhtml" >
+                    To view all Attractions Pending for approval
+                </h:link> </p>
+        
+            <p><h:link outcome="approveAttraction.xhtml" >
+                    To Approve an Attraction
+                </h:link> </p>
+            <p><h:link outcome="index.xhtml" >
+                    Sign Out
+                </h:link> </p>    
+    </h:body>
+    
+</html>
+

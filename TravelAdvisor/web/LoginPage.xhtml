@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Travel Advisor Login</title>
+    </h:head>
+    <center>
+    <h:body style="background-image: url(Images/login.jpg); background-repeat: no-repeat;  text-align:center; background-size:cover">
+        <h:form>
+            <h2 align="center" style="color:white">Please enter User ID and Password to login</h2>
+                 
+            <h3 align="center" style="color:white">Please enter your User ID:<br></br>
+                <h:inputText id="id" required ="true" 
+                             requiredMessage="The ID field cannot be empty"
+                        title="Please enter your ID"
+                        value="#{login.userid}"
+                 validatorMessage="The ID must be between 3 and 20 characters">
+                </h:inputText>
+            </h3>
+            
+            <h3 align="center" style="color:white">Please enter your password:<br></br>
+                <h:inputText id="psw" required ="true" 
+                          requiredMessage="The password field cannot be empty"
+                        title="Please enter your psw"
+                        value="#{login.password}"/>
+                     
+            </h3>
+            <h3>
+                <h:commandButton id="submit" value="Submit"
+                                 action="#{login.Login()}" />
+            </h3>
+
+        </h:form>
+    </h:body>
+    </center>
+</html>
+
